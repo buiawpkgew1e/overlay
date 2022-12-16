@@ -27,20 +27,20 @@ const PopupStats = {
         }
         try {return `
             <p>
-                Network Level: <span style="color: ${HypixelColors.DARK_AQUA}">${NWL(api.networkExp)}</span><br><br>
+                等级: <span style="color: ${HypixelColors.DARK_AQUA}">${NWL(api.networkExp)}</span><br><br>
                 ${starColor(api.achievements.bedwars_level)}<br>
-                Winstreak: <span style="color: ${ws.color}">${ws.count}</span><br><br>
-                Final Kills: <span style="color: ${HypixelColors.GREEN}">${api.stats.Bedwars[`${gmode}final_kills_bedwars`]}</span><br>
-                Final Deaths: <span style="color: ${HypixelColors.RED}">${api.stats.Bedwars[`${gmode}final_deaths_bedwars`]}</span><br>
+                连胜: <span style="color: ${ws.color}">${ws.count}</span><br><br>
+                终杀: <span style="color: ${HypixelColors.GREEN}">${api.stats.Bedwars[`${gmode}final_kills_bedwars`]}</span><br>
+                终死: <span style="color: ${HypixelColors.RED}">${api.stats.Bedwars[`${gmode}final_deaths_bedwars`]}</span><br>
                 FKDR: <span style="color: ${HypixelColors.GOLD}">${parseFloat(api.stats.Bedwars[`${gmode}final_kills_bedwars`]/api.stats.Bedwars[`${gmode}final_deaths_bedwars`]).toFixed(3)}</span><br><br>
-                Beds Broken: <span style="color: ${HypixelColors.GREEN}">${api.stats.Bedwars[`${gmode}beds_broken_bedwars`]}</span><br>
-                Beds Lost: <span style="color: ${HypixelColors.RED}">${api.stats.Bedwars[`${gmode}beds_lost_bedwars`]}</span><br>
+                拆床: <span style="color: ${HypixelColors.GREEN}">${api.stats.Bedwars[`${gmode}beds_broken_bedwars`]}</span><br>
+                被拆床: <span style="color: ${HypixelColors.RED}">${api.stats.Bedwars[`${gmode}beds_lost_bedwars`]}</span><br>
                 BBLR: <span style="color: ${HypixelColors.GOLD}">${parseFloat(api.stats.Bedwars[`${gmode}beds_broken_bedwars`]/api.stats.Bedwars[`${gmode}beds_lost_bedwars`]).toFixed(3)}</span><br><br>
-                Wins: <span style="color: ${HypixelColors.GREEN}">${api.stats.Bedwars[`${gmode}wins_bedwars`]}</span><br>
-                Losses: <span style="color: ${HypixelColors.RED}">${api.stats.Bedwars[`${gmode}losses_bedwars`]}</span><br>
+                胜场: <span style="color: ${HypixelColors.GREEN}">${api.stats.Bedwars[`${gmode}wins_bedwars`]}</span><br>
+                败场: <span style="color: ${HypixelColors.RED}">${api.stats.Bedwars[`${gmode}losses_bedwars`]}</span><br>
                 WLR: <span style="color: ${HypixelColors.GOLD}">${parseFloat(api.stats.Bedwars[`${gmode}wins_bedwars`]/api.stats.Bedwars[`${gmode}losses_bedwars`]).toFixed(3)}</span>
             </p>
-        `;} catch {return '<p style="color: red">ERROR LOADING STATS</p>'}
+        `;} catch {return '<p style="color: red">加载统计数据时出错</p>'}
     },
 
     getSkywarsHTML: function(api) {
