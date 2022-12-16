@@ -8,7 +8,7 @@ jobs:
 
     strategy:
       matrix:
-        os: [windows-latest]
+        os: [windows-latest, ubuntu-latest)]
 
     steps:
       - name: Check out Git repository
@@ -22,12 +22,12 @@ jobs:
       - name: Build/release Electron app
         uses: samuelmeuli/action-electron-builder@v1
         with:
-          # GitHub token, automatically provided to the action
-          # (No need to define this secret in the repo settings)
+          # GitHub令牌，自动提供给动作
+          # (无需在回购设置中定义此秘密)
           github_token: ${{ secrets.github_token }}
 
-          # If the commit is tagged with a version (e.g. "v1.0.0"),
-          # release the app after building
+          # 如果提交被标记有版本(例如“v1.0.0”)，
+          # 构建后发布应用程序
           release: ${{ startsWith(github.ref, 'refs/tags/v') }}
       - name: 自动释放
         uses: marvinpinto/action-automatic-releases@v1.2.1
