@@ -842,8 +842,8 @@ $(() => {
     ModalWindow.initialize(); PopupStats.initialize();
     if (overlayAPIdown) {
         ModalWindow.open({
-            title: 'Abyss Overlay API 关闭',
-            content: '深渊覆盖API目前无法访问！它可能正在维护中，很快就会恢复。标签和/或音乐现在可能无法正常工作',
+            title: 'Abyss Overlay API Down',
+            content: 'The Abyss Overlay API is currently unreachable! It is likely under maintainence and will be back up soon. Tags and/or music might not function properly right now',
             type: -2,
             class: -3
         });
