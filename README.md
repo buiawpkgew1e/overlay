@@ -1,6 +1,6 @@
 # <img src="https://user-images.githubusercontent.com/61895718/111565782-5ced2900-8772-11eb-9c43-c8801fc2a1a8.png" width="32px"> 𝗔𝗯𝘆𝘀𝘀 𝗢𝘃𝗲𝗿𝗹𝗮𝘆 𝘃𝟭.𝟳.𝟬 汉化版
 
-![GitHub package.json version](https://img.shields.io/github/package-json/v/Chit132/abyss-overlay) ![GitHub all releases](https://img.shields.io/github/downloads/Chit132/abyss-overlay/total) [![Discord](https://img.shields.io/discord/822639649247592528?color=7289DA&label=Discord)](https://discord.gg/abyssoverlay)
+![GitHub package.json version](https://img.shields.io/github/package-json/v/buiawpkgew1/abyss-overlay) ![GitHub all releases](https://img.shields.io/github/downloads/buiawpkgew1/abyss-overlay/total) [![Discord](https://img.shields.io/discord/822639649247592528?color=7289DA&label=Discord)](https://discord.gg/abyssoverlay)
 
 ## Sections
 - [First Usage](#first-usage)
@@ -8,7 +8,7 @@
 - [Previews](#preview)
 - [Known Bugs](#known-bugs)
 - [Discord/Support](#discord)
-- [Download](https://github.com/Chit132/abyss-overlay/releases/latest)
+- [Download汉化版](https://github.com/buiawpkgew1/abyss-overlay/releases/latest)
 
 ## First usage
 1. Open the Overlay and select your corrosponding client <br> *(If you don't have any of the corrospending clients; select vanilla and go to the settings and click on `Select log file`, locate your log file and select it)*
