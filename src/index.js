@@ -1243,7 +1243,7 @@ $(() => {
                         else if (gmode.includes('_two')) bwmode = 'Doubles';
                         else if (gmode.includes('_three')) bwmode = 'Threes';
                         else if (gmode.includes('_four')) bwmode = 'Fours';
-                        $('#sessiontitle').html(`Bedwars ${bwmode} Session Stats`);
+                        $('#sessiontitle').html(`起床战争 ${bwmode} 统计`);
 
                         sessionHTML += `<span class="greengradient">等级:</span> &nbsp;${sessionNumHTML(parseFloat(getBedWarsLevel(startplayer.stats.Bedwars.Experience)).toFixed(2), parseFloat(getBedWarsLevel(newplayer.stats.Bedwars.Experience)).toFixed(2), 'lvl')}<br><br>`;
                         sessionHTML += `<span class="greengradient">连胜:</span> &nbsp;${sessionNumHTML(startplayer.stats.Bedwars[`${gmode}winstreak`], newplayer.stats.Bedwars[`${gmode}winstreak`])}<br><br>`;
@@ -1273,16 +1273,16 @@ $(() => {
                             return rpc.request('SET_ACTIVITY', {pid: process.pid, activity: rpcActivity}).catch(console.error);
                         }
 
-                        $('#sessiontitle').html(`Skywars Session Stats`);
+                        $('#sessiontitle').html(`空岛战争总统计`);
 
-                        sessionHTML += `<span class="greengradient">Level:</span> &nbsp;${sessionNumHTML(swLVL(startplayer.stats.SkyWars.skywars_experience), swLVL(newplayer.stats.SkyWars.skywars_experience), 'lvl')}<br><br>`;
-                        sessionHTML += `<span class="greengradient">Kills:</span> &nbsp;${sessionNumHTML(startplayer.stats.SkyWars.kills, newplayer.stats.SkyWars.kills)}<br>`;
-                        sessionHTML += `<span class="redgradient">Deaths:</span> &nbsp;${sessionNumHTML(startplayer.stats.SkyWars.deaths, newplayer.stats.SkyWars.deaths, 1)}<br>`;
+                        sessionHTML += `<span class="greengradient">等级:</span> &nbsp;${sessionNumHTML(swLVL(startplayer.stats.SkyWars.skywars_experience), swLVL(newplayer.stats.SkyWars.skywars_experience), 'lvl')}<br><br>`;
+                        sessionHTML += `<span class="greengradient">击杀:</span> &nbsp;${sessionNumHTML(startplayer.stats.SkyWars.kills, newplayer.stats.SkyWars.kills)}<br>`;
+                        sessionHTML += `<span class="redgradient">死亡:</span> &nbsp;${sessionNumHTML(startplayer.stats.SkyWars.deaths, newplayer.stats.SkyWars.deaths, 1)}<br>`;
                         sessionHTML += `<span class="yellowgradient">KDR:</span> &nbsp;${sessionNumHTML(parseFloat(startplayer.stats.SkyWars.kills/startplayer.stats.SkyWars.deaths).toFixed(3), parseFloat(newplayer.stats.SkyWars.kills/newplayer.stats.SkyWars.deaths).toFixed(3))}<br><br>`;
-                        sessionHTML += `<span class="greengradient">Wins:</span> &nbsp;${sessionNumHTML(startplayer.stats.SkyWars.wins, newplayer.stats.SkyWars.wins)}<br>`;
-                        sessionHTML += `<span class="redgradient">Losses:</span> &nbsp;${sessionNumHTML(startplayer.stats.SkyWars.losses, newplayer.stats.SkyWars.losses, 1)}<br>`;
+                        sessionHTML += `<span class="greengradient">胜场:</span> &nbsp;${sessionNumHTML(startplayer.stats.SkyWars.wins, newplayer.stats.SkyWars.wins)}<br>`;
+                        sessionHTML += `<span class="redgradient">败场:</span> &nbsp;${sessionNumHTML(startplayer.stats.SkyWars.losses, newplayer.stats.SkyWars.losses, 1)}<br>`;
                         sessionHTML += `<span class="yellowgradient">WLR:</span> &nbsp;${sessionNumHTML(parseFloat(startplayer.stats.SkyWars.wins/startplayer.stats.SkyWars.losses).toFixed(3), parseFloat(newplayer.stats.SkyWars.wins/newplayer.stats.SkyWars.losses).toFixed(3))}<br><br>`;
-                        sessionHTML += `<span class="greengradient">Heads:</span> &nbsp;${sessionNumHTML(startplayer.stats.SkyWars.heads, newplayer.stats.SkyWars.heads)}<br>`;
+                        sessionHTML += `<span class="greengradient">头颅:</span> &nbsp;${sessionNumHTML(startplayer.stats.SkyWars.heads, newplayer.stats.SkyWars.heads)}<br>`;
                     }
                     else if (gamemode === 2){
                         if (e === 1){
@@ -1298,7 +1298,7 @@ $(() => {
                             return rpc.request('SET_ACTIVITY', {pid: process.pid, activity: rpcActivity}).catch(console.error);
                         }
 
-                        $('#sessiontitle').html(`Duels Overall Session Stats`);
+                        $('#sessiontitle').html(`决斗总统计`);
 
                         sessionHTML += `<span class="greengradient">连胜:</span> &nbsp;${sessionNumHTML(startplayer.stats.Duels.current_winstreak, newplayer.stats.Duels.current_winstreak)}<br><br>`;
                         sessionHTML += `<span class="greengradient">击杀:</span> &nbsp;${sessionNumHTML(startplayer.stats.Duels.kills, newplayer.stats.Duels.kills)}<br>`;
@@ -1312,8 +1312,8 @@ $(() => {
 
                     let secschange = parseFloat((new Date() - starttime)/1000).toFixed(), timeHTML = '过去的统计数据变化 ';
                     let minschange = parseFloat(secschange/60).toFixed(1);
-                    if (minschange >= 60) timeHTML += `${parseFloat(minschange/60).toFixed()} hrs, `;
-                    timeHTML += `${parseFloat(minschange%60).toFixed(1)} mins`;
+                    if (minschange >= 60) timeHTML += `${parseFloat(minschange/60).toFixed()} 小时, `;
+                    timeHTML += `${parseFloat(minschange%60).toFixed(1)} 分钟`;
                     $('#sessiontime').html(timeHTML);
                 }
             }catch (e) {console.log(e); $('#sessionhtml').html(sessionHTML); rpc.request('SET_ACTIVITY', {pid: process.pid, activity: rpcActivity}).catch(console.error);}
