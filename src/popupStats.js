@@ -55,15 +55,15 @@ const PopupStats = {
             <p>
                 Network Level: <span style="color: ${HypixelColors.DARK_AQUA}">${NWL(api.networkExp)}</span><br><br>
                 ${starColor(swLVL(api.stats.SkyWars.skywars_experience))}<br>
-                Winstreak: <span style="color: ${ws.color}">${ws.count}</span><br><br>
-                Kills: <span style="color: ${HypixelColors.GREEN}">${api.stats.SkyWars.kills}</span><br>
-                Deaths: <span style="color: ${HypixelColors.RED}">${api.stats.SkyWars.deaths}</span><br>
+                连胜: <span style="color: ${ws.color}">${ws.count}</span><br><br>
+                击杀: <span style="color: ${HypixelColors.GREEN}">${api.stats.SkyWars.kills}</span><br>
+                死亡: <span style="color: ${HypixelColors.RED}">${api.stats.SkyWars.deaths}</span><br>
                 KDR: <span style="color: ${HypixelColors.GOLD}">${parseFloat(api.stats.SkyWars.kills/api.stats.SkyWars.deaths).toFixed(3)}</span><br><br>
-                Wins: <span style="color: ${HypixelColors.GREEN}">${api.stats.SkyWars.wins}</span><br>
-                Losses: <span style="color: ${HypixelColors.RED}">${api.stats.SkyWars.losses}</span><br>
+                胜场: <span style="color: ${HypixelColors.GREEN}">${api.stats.SkyWars.wins}</span><br>
+                败场: <span style="color: ${HypixelColors.RED}">${api.stats.SkyWars.losses}</span><br>
                 WLR: <span style="color: ${HypixelColors.GOLD}">${parseFloat(api.stats.SkyWars.wins/api.stats.SkyWars.losses).toFixed(3)}</span>
             </p>
-        `;} catch {return '<p style="color: red">ERROR LOADING STATS</p>'}
+        `;} catch {return '<p style="color: red">加载统计信息时出错</p>'}
     },
 
     getDuelsHTML: function(api) {
@@ -78,15 +78,15 @@ const PopupStats = {
             <p>
                 Network Level: <span style="color: ${HypixelColors.DARK_AQUA}">${NWL(api.networkExp)}</span><br><br>
                 ${starColor(api.stats.Duels.wins)}<br>
-                Winstreak: <span style="color: ${ws.color}">${ws.count}</span><br><br>
-                Kills: <span style="color: ${HypixelColors.GREEN}">${api.stats.Duels.kills}</span><br>
-                Deaths: <span style="color: ${HypixelColors.RED}">${api.stats.Duels.deaths}</span><br>
+                连胜: <span style="color: ${ws.color}">${ws.count}</span><br><br>
+                击杀: <span style="color: ${HypixelColors.GREEN}">${api.stats.Duels.kills}</span><br>
+                死亡: <span style="color: ${HypixelColors.RED}">${api.stats.Duels.deaths}</span><br>
                 KDR: <span style="color: ${HypixelColors.GOLD}">${parseFloat(api.stats.Duels.kills/api.stats.Duels.deaths).toFixed(3)}</span><br><br>
-                Wins: <span style="color: ${HypixelColors.GREEN}">${api.stats.Duels.wins}</span><br>
-                Losses: <span style="color: ${HypixelColors.RED}">${api.stats.Duels.losses}</span><br>
+                胜场: <span style="color: ${HypixelColors.GREEN}">${api.stats.Duels.wins}</span><br>
+                败场: <span style="color: ${HypixelColors.RED}">${api.stats.Duels.losses}</span><br>
                 WLR: <span style="color: ${HypixelColors.GOLD}">${parseFloat(api.stats.Duels.wins/api.stats.Duels.losses).toFixed(3)}</span>
             </p>
-        `;} catch {return '<p style="color: red">ERROR LOADING STATS</p>'}
+        `;} catch {return '<p style="color: red">加载统计信息时出错</p>'}
     },
 
     getTemplateHTML: function(api, gamemode, BWmode) {
