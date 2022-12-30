@@ -32,7 +32,7 @@ const { PopupStats } = require('./popupStats.js');
 config.delete('players');
 const tagsIP = process.env.TAGS_IP, musicIP = process.env.MUSIC_IP, mojang = 'https://api.mojang.com/users/profiles/minecraft/';
 var players = [], numplayers = 0, key = config.get('key', '1'), apilink = `https://api.hypixel.net/player?key=${key}&uuid=`, goodkey = true, keyThrottle = false, apiDown = false, overlayAPIdown = false, logpath = '', goodfile = true, currentWindow = '', user = undefined, useruuid = undefined, sent = false, usernick = undefined, winheight = 600, inlobby = true, zoom = 1, gamemode = config.get('settings.gamemode', 0), gmode = config.get('settings.bwgmode', ''), guildlist = false, tagslist = [], guildtag = config.get('settings.gtag', true), startapi = null, starttime = new Date(), music = {session: false, playing: false, looping: false, queue: [], updatetimer: 0, timeratio: [0, 0], songtimer: 0, locked: false, lockwarned: false};
-var rpcActivity = {details: 'Vibing', state: "Kickin' some butt", assets: {large_image: 'overlay_logo', large_text: 'Abyss Overlay', small_image: 'hypixel', small_text: 'Playing on Hypixel'}, buttons: [{label: '获取Overlay汉化', 'url': 'https://github.com/buiawpkgew1/abyss-overlay/releases/latest'}, {label: '获取 Overlay', 'url': 'https://github.com/Chit132/abyss-overlay/releases/latest'}, {label: '加入Discord', 'url': 'https://discord.gg/7dexcJTyCJ'}], timestamps: {start: Date.now()}, instance: true};
+var rpcActivity = {details: 'Vibing', state: "Kickin' some butt", assets: {large_image: 'overlay_logo', large_text: 'Abyss Overlay', small_image: 'hypixel', small_text: 'Playing on Hypixel'}, buttons: [{label: 'Get Overlay', 'url': 'https://github.com/Chit132/abyss-overlay/releases/latest'}, {label: 'Join the Discord', 'url': 'https://discord.gg/7dexcJTyCJ'}], timestamps: {start: Date.now()}, instance: true};
 
 
 function updateTags(){
@@ -1245,16 +1245,16 @@ $(() => {
                         else if (gmode.includes('_four')) bwmode = 'Fours';
                         $('#sessiontitle').html(`起床战争 ${bwmode} 统计`);
 
-                        sessionHTML += `<span class="greengradient">等级:</span> &nbsp;${sessionNumHTML(parseFloat(getBedWarsLevel(startplayer.stats.Bedwars.Experience)).toFixed(2), parseFloat(getBedWarsLevel(newplayer.stats.Bedwars.Experience)).toFixed(2), 'lvl')}<br><br>`;
-                        sessionHTML += `<span class="greengradient">连胜:</span> &nbsp;${sessionNumHTML(startplayer.stats.Bedwars[`${gmode}winstreak`], newplayer.stats.Bedwars[`${gmode}winstreak`])}<br><br>`;
-                        sessionHTML += `<span class="greengradient">终杀:</span> &nbsp;${sessionNumHTML(startplayer.stats.Bedwars[`${gmode}final_kills_bedwars`], newplayer.stats.Bedwars[`${gmode}final_kills_bedwars`])}<br>`;
-                        sessionHTML += `<span class="redgradient">终死:</span> &nbsp;${sessionNumHTML(startplayer.stats.Bedwars[`${gmode}final_deaths_bedwars`], newplayer.stats.Bedwars[`${gmode}final_deaths_bedwars`], 1)}<br>`;
+                        sessionHTML += `<span class="greengradient">Stars:</span> &nbsp;${sessionNumHTML(parseFloat(getBedWarsLevel(startplayer.stats.Bedwars.Experience)).toFixed(2), parseFloat(getBedWarsLevel(newplayer.stats.Bedwars.Experience)).toFixed(2), 'lvl')}<br><br>`;
+                        sessionHTML += `<span class="greengradient">Winstreak:</span> &nbsp;${sessionNumHTML(startplayer.stats.Bedwars[`${gmode}winstreak`], newplayer.stats.Bedwars[`${gmode}winstreak`])}<br><br>`;
+                        sessionHTML += `<span class="greengradient">Final Kills:</span> &nbsp;${sessionNumHTML(startplayer.stats.Bedwars[`${gmode}final_kills_bedwars`], newplayer.stats.Bedwars[`${gmode}final_kills_bedwars`])}<br>`;
+                        sessionHTML += `<span class="redgradient">Final Deaths:</span> &nbsp;${sessionNumHTML(startplayer.stats.Bedwars[`${gmode}final_deaths_bedwars`], newplayer.stats.Bedwars[`${gmode}final_deaths_bedwars`], 1)}<br>`;
                         sessionHTML += `<span class="yellowgradient">FKDR:</span> &nbsp;${sessionNumHTML(parseFloat(startplayer.stats.Bedwars[`${gmode}final_kills_bedwars`]/startplayer.stats.Bedwars[`${gmode}final_deaths_bedwars`]).toFixed(3), parseFloat(newplayer.stats.Bedwars[`${gmode}final_kills_bedwars`]/newplayer.stats.Bedwars[`${gmode}final_deaths_bedwars`]).toFixed(3))}<br><br>`;
                         sessionHTML += `<span class="greengradient">Wins:</span> &nbsp;${sessionNumHTML(startplayer.stats.Bedwars[`${gmode}wins_bedwars`], newplayer.stats.Bedwars[`${gmode}wins_bedwars`])}<br>`;
                         sessionHTML += `<span class="redgradient">Losses:</span> &nbsp;${sessionNumHTML(startplayer.stats.Bedwars[`${gmode}losses_bedwars`], newplayer.stats.Bedwars[`${gmode}losses_bedwars`], 1)}<br>`;
                         sessionHTML += `<span class="yellowgradient">WLR:</span> &nbsp;${sessionNumHTML(parseFloat(startplayer.stats.Bedwars[`${gmode}wins_bedwars`]/startplayer.stats.Bedwars[`${gmode}losses_bedwars`]).toFixed(3), parseFloat(newplayer.stats.Bedwars[`${gmode}wins_bedwars`]/newplayer.stats.Bedwars[`${gmode}losses_bedwars`]).toFixed(3))}<br><br>`;
-                        sessionHTML += `<span class="greengradient">拆床:</span> &nbsp;${sessionNumHTML(startplayer.stats.Bedwars[`${gmode}beds_broken_bedwars`], newplayer.stats.Bedwars[`${gmode}beds_broken_bedwars`])}<br>`;
-                        sessionHTML += `<span class="redgradient">被拆床:</span> &nbsp;${sessionNumHTML(startplayer.stats.Bedwars[`${gmode}beds_lost_bedwars`], newplayer.stats.Bedwars[`${gmode}beds_lost_bedwars`], 1)}<br>`;
+                        sessionHTML += `<span class="greengradient">Beds Broken:</span> &nbsp;${sessionNumHTML(startplayer.stats.Bedwars[`${gmode}beds_broken_bedwars`], newplayer.stats.Bedwars[`${gmode}beds_broken_bedwars`])}<br>`;
+                        sessionHTML += `<span class="redgradient">Beds Lost:</span> &nbsp;${sessionNumHTML(startplayer.stats.Bedwars[`${gmode}beds_lost_bedwars`], newplayer.stats.Bedwars[`${gmode}beds_lost_bedwars`], 1)}<br>`;
                         sessionHTML += `<span class="yellowgradient">BBLR:</span> &nbsp;${sessionNumHTML(parseFloat(startplayer.stats.Bedwars[`${gmode}beds_broken_bedwars`]/startplayer.stats.Bedwars[`${gmode}beds_lost_bedwars`]).toFixed(3), parseFloat(newplayer.stats.Bedwars[`${gmode}beds_broken_bedwars`]/newplayer.stats.Bedwars[`${gmode}beds_lost_bedwars`]).toFixed(3))}<br><br>`;
                     }
                     else if (gamemode === 1){
@@ -1300,17 +1300,17 @@ $(() => {
 
                         $('#sessiontitle').html(`决斗总统计`);
 
-                        sessionHTML += `<span class="greengradient">连胜:</span> &nbsp;${sessionNumHTML(startplayer.stats.Duels.current_winstreak, newplayer.stats.Duels.current_winstreak)}<br><br>`;
-                        sessionHTML += `<span class="greengradient">击杀:</span> &nbsp;${sessionNumHTML(startplayer.stats.Duels.kills, newplayer.stats.Duels.kills)}<br>`;
-                        sessionHTML += `<span class="redgradient">死亡:</span> &nbsp;${sessionNumHTML(startplayer.stats.Duels.deaths, newplayer.stats.Duels.deaths, 1)}<br>`;
+                        sessionHTML += `<span class="greengradient">Winstreak:</span> &nbsp;${sessionNumHTML(startplayer.stats.Duels.current_winstreak, newplayer.stats.Duels.current_winstreak)}<br><br>`;
+                        sessionHTML += `<span class="greengradient">Kills:</span> &nbsp;${sessionNumHTML(startplayer.stats.Duels.kills, newplayer.stats.Duels.kills)}<br>`;
+                        sessionHTML += `<span class="redgradient">Deaths:</span> &nbsp;${sessionNumHTML(startplayer.stats.Duels.deaths, newplayer.stats.Duels.deaths, 1)}<br>`;
                         sessionHTML += `<span class="yellowgradient">KDR:</span> &nbsp;${sessionNumHTML(parseFloat(startplayer.stats.Duels.kills/startplayer.stats.Duels.deaths).toFixed(3), parseFloat(newplayer.stats.Duels.kills/newplayer.stats.Duels.deaths).toFixed(3))}<br><br>`;
-                        sessionHTML += `<span class="greengradient">胜场:</span> &nbsp;${sessionNumHTML(startplayer.stats.Duels.wins, newplayer.stats.Duels.wins)}<br>`;
-                        sessionHTML += `<span class="redgradient">败场:</span> &nbsp;${sessionNumHTML(startplayer.stats.Duels.losses, newplayer.stats.Duels.losses, 1)}<br>`;
+                        sessionHTML += `<span class="greengradient">Wins:</span> &nbsp;${sessionNumHTML(startplayer.stats.Duels.wins, newplayer.stats.Duels.wins)}<br>`;
+                        sessionHTML += `<span class="redgradient">Losses:</span> &nbsp;${sessionNumHTML(startplayer.stats.Duels.losses, newplayer.stats.Duels.losses, 1)}<br>`;
                         sessionHTML += `<span class="yellowgradient">WLR:</span> &nbsp;${sessionNumHTML(parseFloat(startplayer.stats.Duels.wins/startplayer.stats.Duels.losses).toFixed(3), parseFloat(newplayer.stats.Duels.wins/newplayer.stats.Duels.losses).toFixed(3))}<br><br>`;
                     }
                     $('#sessionhtml').html(sessionHTML);
 
-                    let secschange = parseFloat((new Date() - starttime)/1000).toFixed(), timeHTML = '过去的统计数据变化 ';
+                    let secschange = parseFloat((new Date() - starttime)/1000).toFixed(), timeHTML = 'Stats changes in the past ';
                     let minschange = parseFloat(secschange/60).toFixed(1);
                     if (minschange >= 60) timeHTML += `${parseFloat(minschange/60).toFixed()} 小时, `;
                     timeHTML += `${parseFloat(minschange%60).toFixed(1)} 分钟`;
