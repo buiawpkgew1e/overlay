@@ -125,7 +125,7 @@
     "progress": "^2.0.3",
     "proto-list": "^1.2.4",
     "pump": "^3.0.0",
-    "readable-stream": "^2.3.7",
+    "readable-stream": "^4.0.0",
     "responselike": "^3.0.0",
     "roarr": "^7.0.0",
     "safe-buffer": "^5.1.2",
