@@ -1768,6 +1768,13 @@ matcher@^3.0.0:
   dependencies:
     escape-string-regexp "^4.0.0"
 
+matcher@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/matcher/-/matcher-5.0.0.tgz#cd82f1c7ae7ee472a9eeaf8ec7cac45e0fe0da62"
+  integrity sha512-s2EMBOWtXFc8dgqvoAzKJXxNHibcdJMV0gwqKUaw9E2JBJuGUK7DrNKrA6g/i+v72TT16+6sVm5mS3thaMLQUw==
+  dependencies:
+    escape-string-regexp "^5.0.0"
+
 mime-db@1.52.0:
   version "1.52.0"
   resolved "https://registry.npmjs.org/mime-db/-/mime-db-1.52.0.tgz"
