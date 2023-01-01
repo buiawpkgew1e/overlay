@@ -138,7 +138,7 @@
     "tail": "^2.2.0",
     "to-readable-stream": "^1.0.0",
     "tunnel": "^0.0.6",
-    "type-fest": "^0.21.0",
+    "type-fest": "^3.0.0",
     "typedarray": "^0.0.7",
     "universalify": "^0.2.0",
     "url-parse-lax": "^5.0.0",
