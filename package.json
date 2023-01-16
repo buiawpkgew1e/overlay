@@ -111,7 +111,7 @@
     "matcher": "^5.0.0",
     "mimic-response": "^4.0.0",
     "minimist": "1.2.7",
-    "mkdirp": "^1.0.0",
+    "mkdirp": "^2.0.0",
     "ms": "^2.1.2",
     "normalize-url": "^8.0.0",
     "npm-conf": "^1.1.3",
