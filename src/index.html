@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Abyss Overlay</title>
+    <script src="../src/i18n/language.js"></script>
     <script src="../src/index.js"></script>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/nano.min.css">
@@ -32,16 +33,17 @@
         <div id="settingsdiv">
             <div class="settings-container">
                 <div class="setting-group" style="z-index: 2;">
-                    <p>统计游戏模式 by:lroj</p>
+                    <!-- <p>统计游戏模式 by:lroj</p> -->
+                    <p>{{ $t('message.gamemode', { id: 'lroj' }) }}</p>
                     <div class="custom-select-wrapper" id="gamemodebtn" style="filter: none;">
                         <div class="custom-select">
                             <div class="custom-select_trigger"><span style="text-align: center; width: 85%;">Select</span>
                                 <div class="arrow"></div>
                             </div>
                             <div class="custom-options">
-                                <span class="custom-option" id="bw">起床战争</span>
-                                <span class="custom-option" id="sw">空岛战争</span>
-                                <span class="custom-option" id="duels">决斗</span>
+                                <span class="custom-option" id="bw">{{ $t('message.bw'}) }}</span>
+                                <span class="custom-option" id="sw">{{ $t('message.sw'}) }}</span>
+                                <span class="custom-option" id="duels">{{ $t('message.duels'}) }}</span>
                             </div>
                         </div>
                     </div>
