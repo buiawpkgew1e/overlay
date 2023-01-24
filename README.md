@@ -1,5 +1,7 @@
 # <img src="https://user-images.githubusercontent.com/61895718/111565782-5ced2900-8772-11eb-9c43-c8801fc2a1a8.png" width="32px"> 𝗔𝗯𝘆𝘀𝘀 𝗢𝘃𝗲𝗿𝗹𝗮𝘆 𝘃𝟭.𝟳.𝟬 汉化版
 
+[![Build/release](https://github.com/buiawpkgew1e/overlay/actions/workflows/build.yml/badge.svg)](https://github.com/buiawpkgew1e/overlay/actions/workflows/build.yml)
+
 ![GitHub package.json version](https://img.shields.io/github/package-json/v/buiawpkgew1/abyss-overlay) ![GitHub all releases](https://img.shields.io/github/downloads/buiawpkgew1/abyss-overlay/total) [![Discord](https://img.shields.io/discord/822639649247592528?color=7289DA&label=Discord)](https://discord.gg/abyssoverlay)
 
 ## Sections
