@@ -24,16 +24,16 @@ jobs:
         run: yarn add vue-i18n@9
 
       - name: Commit change
-      run: |
-        git config --local user.email "actions@github.com"
-        git config --local user.name "GitHub Actions"
-        git pull origin dev
-        git add yarn.lock
-        git commit -m "$(date '+%Y-%m-%d %H:%M:%S')合并节点"
-    - name: Push
-      uses:  ad-m/github-push-action@master
-      with:
-        branch: dev
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          git pull origin dev
+          git add yarn.lock
+          git commit -m "$(date '+%Y-%m-%d %H:%M:%S')合并节点"
+      - name: Push
+        uses:  ad-m/github-push-action@master
+        with:
+          branch: dev
       # - name: Build/release Electron app
       #   uses: samuelmeuli/action-electron-builder@v1.6.0
       #   with:
