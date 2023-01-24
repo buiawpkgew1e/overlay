@@ -5,6 +5,19 @@ const electron_log = require('electron-log'); electron_log.catchErrors({ showDia
 const isDev = require('electron-is-dev');
 const path = require('path');
 const { exec } = require('child_process');
+import { createApp } from 'vue'
+import { createI18n } from 'vue-i18n'
+
+const i18n = createI18n({
+  // something vue-i18n options here ...
+})
+
+const app = createApp({
+  // something vue options here ...
+})
+
+app.use(i18n)
+app.mount('#app')
 
 if (process.platform === 'win32') app.setAppUserModelId('AbyssOverlay');
 
