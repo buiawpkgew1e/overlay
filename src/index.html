@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Abyss Overlay</title>
-    <script src="../src/i18n/language.js"></script>
     <script src="../src/index.js"></script>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/nano.min.css">
@@ -33,17 +32,16 @@
         <div id="settingsdiv">
             <div class="settings-container">
                 <div class="setting-group" style="z-index: 2;">
-                    <!-- <p>统计游戏模式 by:lroj</p> -->
-                    <p>{{ $t('message.gamemode', { id: 'lroj' }) }}</p>
+                    <p>统计游戏模式 by:lroj</p>
                     <div class="custom-select-wrapper" id="gamemodebtn" style="filter: none;">
                         <div class="custom-select">
                             <div class="custom-select_trigger"><span style="text-align: center; width: 85%;">Select</span>
                                 <div class="arrow"></div>
                             </div>
                             <div class="custom-options">
-                                <span class="custom-option" id="bw">{{ $t('message.bw'}) }}</span>
-                                <span class="custom-option" id="sw">{{ $t('message.sw'}) }}</span>
-                                <span class="custom-option" id="duels">{{ $t('message.duels'}) }}</span>
+                                <span class="custom-option" id="bw">起床战争</span>
+                                <span class="custom-option" id="sw">空岛战争</span>
+                                <span class="custom-option" id="duels">决斗</span>
                             </div>
                         </div>
                     </div>
@@ -247,7 +245,7 @@
         <!-- <p class="clientbutton updatenotif" style="color: red; display: none; width: 100%; word-wrap: break-word; white-space: normal; text-align: center;">THIS VERSION IS OUT OF DATE. UPDATE BY JOINING THE DISCORD OR CLICKING THE RED UPDATE BUTTON</p> -->
         <!--<iframe src="https://discord.com/widget?id=822639649247592528&theme=dark" width="350" height="340" allowtransparency="true" frameborder="0" sandbox="allow-same-origin allow-scripts"></iframe>-->
         <div id="titles">
-            <p class="titleitems" style="width: 46.75%; padding-left: 2px;" id="playertitle">PLAYERS</p>
+            <p class="titleitems" style="width: 46.75%; padding-left: 2px;" id="playertitle">玩家</p>
             <p class="titleitems" style="width: 6%;">TAG</p>
             <p class="titleitems" id="ws_nwl" style="width: 6.5%;">WS</p>
             <p class="titleitems" id="kdr" style="width: 9.5%;">FKDR</p>
