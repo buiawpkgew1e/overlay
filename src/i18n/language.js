@@ -11,5 +11,8 @@ const messages = {
         message:{
             gamemode:'统计游戏模式 by:{id}'
         }
+    },
+    ja:{
+
     }
   }
